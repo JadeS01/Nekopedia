@@ -8,9 +8,7 @@
 	</main>
 
 	<footer>
-		<p>
-			visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit
-		</p>
+		<img src="../lib/images/github.svg" alt="GitHub" />
 	</footer>
 </div>
 
