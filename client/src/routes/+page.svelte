@@ -45,13 +45,17 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="flex flex-wrap justify-center font-sans font-normal text-base">
+<div
+	class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-sans font-normal text-base"
+>
 	{#if data}
 		{#if $modalState}
 			<Modal handleState={closeModal} {modalData} />
 		{/if}
 		{#each data as cat}
-			<Card {cat} {openModal} />
+			<div class="flex-1">
+				<Card {cat} {openModal} />
+			</div>
 		{/each}
 	{:else}
 		<div>nothing</div>
