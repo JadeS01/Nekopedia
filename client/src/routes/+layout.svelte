@@ -8,7 +8,7 @@
 	</main>
 
 	<footer>
-		<img src="../lib/images/github.svg" alt="GitHub" />
+		<!-- <img src="../lib/images/github.svg" alt="GitHub" /> -->
 	</footer>
 </div>
 

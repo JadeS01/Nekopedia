@@ -7,7 +7,10 @@
     export let openModal: (cat: IData) => void;
 </script>
 
-<div class="p-4 card h-full w-full">
+<div
+    class="p-4 card h-full w-full cursor-pointer"
+    on:click={() => openModal(cat)}
+>
     <CenterContent>
         <CardTitle text={cat.CatName} />
     </CenterContent>
