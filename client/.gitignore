@@ -12,3 +12,12 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 package-lock.json
+
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.ci-build.yml
+docker-compose.debug.yml
+*.dockerfile
+*.dockerfile.*

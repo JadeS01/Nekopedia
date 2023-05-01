@@ -9,7 +9,8 @@ module.exports = {
       normal: '900'
     },
     fontSize: {
-      base: '16px'
+      base: '16px',
+      lg: '22px'
     },
     extend: {},
   },
