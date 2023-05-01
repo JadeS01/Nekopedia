@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Card from "../lib/components/Card.svelte";
-	import Modal from "../lib/components/Modal.svelte";
-	import { onMount } from "svelte";
-	import type { IData } from "../lib/utils/IData";
-	import { writable } from "svelte/store";
-	import Button from "$lib/components/Button.svelte";
+	import Card from '../lib/components/Card.svelte';
+	import Modal from '../lib/components/Modal.svelte';
+	import { onMount } from 'svelte';
+	import type { IData } from '../lib/utils/IData';
+	import { writable } from 'svelte/store';
+	import Button from '$lib/components/Button.svelte';
 
 	let data: IData[];
 	const pageSize = 6;
@@ -12,16 +12,16 @@
 	const currPage = writable<number>(1);
 	let displayItems: IData[];
 	const modalState = writable(false);
-	const emptyData = {
-		CatId: "",
-		CatName: "",
-		CatDescription: "",
-		CatPersonality: "",
-		CatPowerLevel: "",
-		CatType: "",
-		Memento: "",
-		CatImage: "",
-		MementoImage: "",
+	const emptyData: IData = {
+		CatId: '',
+		CatName: '',
+		CatDescription: '',
+		CatPersonality: '',
+		CatPowerLevel: '',
+		CatType: '',
+		Memento: '',
+		CatImage: '',
+		MementoImage: '',
 	};
 	let modalData = writable(emptyData);
 
@@ -59,7 +59,7 @@
 
 	onMount(async () => {
 		try {
-			const res = await fetch("https://api.neko-atsume.emshea.com/cats");
+			const res = await fetch('https://api.neko-atsume.emshea.com/cats');
 			data = await res.json();
 			totalPages = Math.ceil(data.length / pageSize);
 			displayItems = data.slice(
@@ -89,14 +89,10 @@
 				<Card {cat} {openModal} />
 			</div>
 		{/each}
-		<div class="grid grid-cols-2 sm:grid-cols-2">
-			<div on:click={prevPage}>
-				<Button text="Back" />
-			</div>
-			<div on:click={nextPage}>
-				<Button text="Next" />
-			</div>
-		</div>
+		<!-- <div class="grid grid-cols-2 sm:grid-cols-2"> -->
+		<Button text="Back" on:click={prevPage} />
+		<Button text="Next" on:click={nextPage} />
+		<!-- </div> -->
 	{:else}
 		<div>nothing</div>
 	{/if}
